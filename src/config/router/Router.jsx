@@ -1,13 +1,13 @@
-import { BrowserRouter, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
 import App from "../../App";
-import "../../src/index.css";
+import WelcomePage from "../../pages/WelcomePage/WelcomePage";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/welcome" element={<App />} />
+        <Route path="/welcome" element={<WelcomePage />} />
         <Route path="/homepage" element={<App />} />
         <Route path="/favourites" element={<App />} />
         <Route path="/authentication" element={<App />} />
