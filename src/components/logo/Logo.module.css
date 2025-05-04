@@ -3,13 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  height: 5vh;
   width: 25vw;
 }
 
 /* Estilo para la imagen del logo */
 img {
-  height: 19vh;
+  height: 14vh;
   width: auto;
   max-width: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;

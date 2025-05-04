@@ -5,12 +5,12 @@
   align-items: center;
   height: 69vh;
   width: 100%vh;
-  background-color: hsl(118, 81%, 25%);
-  color: white;
+  background-color: white;
+  color: black;
   font-size: 2rem;
   font-family: "Inter", sans-serif;
   font-weight: 500;
-  padding-top: 20px;
+  padding-top: 80px;
 }
 
 .container h1 {

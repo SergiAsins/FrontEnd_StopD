@@ -6,7 +6,7 @@
 /* Enlace de navegación */
 .navLink {
   text-decoration: none;
-  color: var(--quinary-color);
+  color: var(--secondary-color);
   font-weight: bold;
   font-size: 1.7rem;
   transition: color 0.3s ease, transform 0.3s ease;

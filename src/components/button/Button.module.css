@@ -13,7 +13,7 @@
 /* Botón primario */
 .buttonPrimary {
   background-color: var(--primary-color);
-  color: var(--quinary-color);
+  color: var(--secondary-color);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 2em;
 }

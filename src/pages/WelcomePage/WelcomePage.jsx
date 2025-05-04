@@ -1,6 +1,7 @@
+import pagesStyle from "../../pages/Pages.module.css";
 import styles from "./WelcomePage.module.css";
 import Header from "../../components/header/Header";
-//import Footer from "../../components/footer/Footer";
+import Footer from "../../components/footer/Footer";
 
 export default function WelcomePage() {
   return (
@@ -11,6 +12,7 @@ export default function WelcomePage() {
         <h2>Stop Desahucios!</h2>
         <h3>Because housing is a right! Not just a business!</h3>
       </div>
+      <Footer />
     </>
   );
 }

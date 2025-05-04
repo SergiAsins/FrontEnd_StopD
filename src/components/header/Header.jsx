@@ -13,7 +13,6 @@ export default function Header() {
         <NavItem href="/home" text="Home" />
         <NavItem href="/favourites" text="Favourites" />
         <NavItem href="/aboutus" text="Abouts us" />
-        <NavItem href="/contact" text="Contact us" />
         <NavItem href="/homepage" text="My Case" />
       </NavBar>
       <Button className={clsx(styles.headerContainer.Login)} text="Log_In" />
