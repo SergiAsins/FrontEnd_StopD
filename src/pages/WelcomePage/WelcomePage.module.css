@@ -14,19 +14,24 @@
 }
 
 .container h1 {
+  padding-left: 75px;
   text-align: center;
+  font-size: 10rem;
+  color: var(--primary-color);
 }
 
 .container h2 {
-  text-align: left;
+  text-align: center;
   width: 100%;
   margin-top: 20px;
-  padding-left: 100px;
+  padding-left: 125px;
+  color: var(--primary-color);
 }
 
-.container h6 {
-  text-align: left;
+.container h3 {
+  text-align: center;
   width: 100%;
-  margin-top: 10px;
-  padding-left: 100px;
+  margin-top: 20px;
+  padding-left: 125px;
+  color: var(--primary-color);
 }
