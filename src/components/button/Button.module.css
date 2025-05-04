@@ -1,0 +1,66 @@
+/* Botón base */
+.button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+/* Botón primario */
+.buttonPrimary {
+  background-color: var(--primary-color);
+  color: var(--quinary-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 2em;
+}
+
+.buttonPrimary:hover {
+  background-color: var(--tertiary-color);
+  color: var(--quinary-color);
+}
+
+/* Botón secundario */
+.buttonSecondary {
+  background-color: var(--secondary-color);
+  color: var(--quinary-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buttonSecondary:hover {
+  background-color: var(--cuaternary-color);
+  color: var(--primary-color);
+}
+
+/* Botón deshabilitado */
+.buttonDisabled {
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Media Queries (igual que antes) */
+@media (max-width: 1280px) {
+  .button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .button {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+  }
+}
