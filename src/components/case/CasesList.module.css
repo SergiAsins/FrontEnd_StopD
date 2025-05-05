@@ -1,0 +1,167 @@
+.casesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.caseCard {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caseCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.favoriteIcon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.3);
+  /* Corazón gris claro por defecto */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.favoriteIcon:hover {
+  color: var(--tertiary-color);
+  /* Rojo al pasar el mouse */
+}
+
+.favoriteActive {
+  color: var(--tertiary-color);
+  /* Rojo cuando está activo */
+}
+
+.caseImage {
+  width: 50%;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.caseContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.caseAddress {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+/*.caseDetails {
+  background-color: rgba(200, 200, 200, 0.3);
+   
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}*/
+
+.caseDate {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.caseTenants {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.caseAttendants {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+.caseCity,
+.caseRegion {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.caseDescription {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1rem;
+  width: 6rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.attend {
+  color: var(--quinary-color);
+  background-color: var(--cuaternary-color);
+}
+
+.attend:hover {
+  background-color: var(--tertiary-color);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .caseCard {
+    flex-direction: column;
+    /* Cambia a diseño vertical en pantallas pequeñas */
+    align-items: flex-start;
+  }
+
+  .caseImage {
+    width: 100%;
+    /* Imagen ocupa todo el ancho */
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .caseContent {
+    width: 100%;
+    /* Contenido ocupa todo el ancho */
+  }
+}
+
+@media (max-width: 480px) {
+  .caseAddress {
+    font-size: 1rem;
+  }
+
+  .caseCity,
+  .caseRegion,
+  .casedate,
+  .caseDescription {
+    font-size: 0.8rem;
+  }
+
+  .button {
+    height: 2rem;
+    width: 5rem;
+    font-size: 0.9rem;
+  }
+}
