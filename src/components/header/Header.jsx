@@ -10,10 +10,11 @@ export default function Header() {
     <header className={styles.headerContainer}>
       <Logo />
       <NavBar>
-        <NavItem href="/home" text="Cases" />
-        <NavItem href="/favourites" text="Attend" />
+        <NavItem href="/casesPage" text="Cases" />
+        <NavItem href="/favourites" text="Favourites" />
         <NavItem href="/aboutus" text="Abouts us" />
         <NavItem href="/homepage" text="My Case" />
+        <NavItem href="/homepage" text="My Profile" />
       </NavBar>
       <Button className={clsx(styles.headerContainer.Login)} text="Log_In" />
     </header>

@@ -7,7 +7,7 @@ export default function Logo() {
   return (
     <div className={styles.logoContainer}>
       {/* Envolvemos el logo en un Link */}
-      <Link to="/welcome">
+      <Link to="/">
         <Image img={logo} alt="Logo de Boom Comics" />
       </Link>
     </div>

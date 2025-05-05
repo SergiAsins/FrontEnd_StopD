@@ -64,8 +64,6 @@ export default function CasesPage() {
     <>
       <Header />
       <main className={styles.container}>
-        <h1>Cases</h1>
-        <h2>Stop Desahucios!</h2>
         <h3>Because housing is a right! Not just a business!</h3>
         <CasesList cases={cases} />
       </main>
