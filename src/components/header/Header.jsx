@@ -10,8 +10,8 @@ export default function Header() {
     <header className={styles.headerContainer}>
       <Logo />
       <NavBar>
-        <NavItem href="/home" text="Home" />
-        <NavItem href="/favourites" text="Favourites" />
+        <NavItem href="/home" text="Cases" />
+        <NavItem href="/favourites" text="Attend" />
         <NavItem href="/aboutus" text="Abouts us" />
         <NavItem href="/homepage" text="My Case" />
       </NavBar>
