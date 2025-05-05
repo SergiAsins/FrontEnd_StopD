@@ -35,6 +35,7 @@ function CaseCard({ caseItem }) {
       {/* caseItem content */}
       <div className={styles.caseContent}>
         <h3 className={styles.caseAddress}>{caseItem.address}</h3>
+        <p className={styles.caseStatus}>Status: {caseItem.status}</p>
         <p className={styles.caseDate}>EvictionDate: {caseItem.date}</p>
         <p className={styles.caseTenants}>Tenants: {caseItem.tenants}</p>
         <p className={styles.caseCity}>City: {caseItem.city}</p>
