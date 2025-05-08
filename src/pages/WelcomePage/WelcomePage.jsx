@@ -3,6 +3,7 @@ import styles from "./WelcomePage.module.css";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 
+/* Isma: the footer looks like is inside an element */
 export default function WelcomePage() {
   return (
     <>

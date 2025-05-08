@@ -1,0 +1,76 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 2rem;
+  position: relative;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0; /* Ajustamos el line-height */
+  max-width: 500px; /* Añadimos un máximo para controlar el ancho */
+  width: 90%;
+  border-radius: 0;
+  box-shadow: 10px 10px lightblue;
+  box-shadow: -19px -16px rgb(99, 97, 97);
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: rgb(133, 133, 133);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 1.7rem;
+}
+
+.modalImage {
+  width: 50%;
+  height: 50%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.titleModal {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modalContent p {
+  margin: 0 0;
+  text-align: center;
+}
+
+.modalContent .attend {
+  background-color: var(--cuaternary-color);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  padding-block: 1.1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+  border-radius: 0;
+  width: 100%;
+}
+
+.modalContent .attend:hover {
+  background-color: var(--tertiary-color);
+}

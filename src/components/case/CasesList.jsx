@@ -1,33 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./CasesList.module.css";
 import Button from "../button/Button";
 import clsx from "clsx";
-//import { FaHeart } from "react-icons/fa";
+import CaseModal from "../modal/Modal";
 //import { CaseItem } from "../../types/index";
+//import { FaHeart } from "react-icons/fa";
 //import { useFavourites } from "../../context/FavouritesContext";
 
-// Changed from lowercase 'casesList' to uppercase 'CasesList'
 export default function CasesList({ cases }) {
+  const [selectedCase, setSelectedCase] = useState(null);
+
+  const handleCardClick = (caseItem) => {
+    setSelectedCase(caseItem); // Shows the modal with the selected case
+  };
+
+  const closeModal = () => {
+    setSelectedCase(null); // Close the modal
+  };
+
   return (
     <div className={styles.casesContainer}>
       {cases.map((caseItem) => (
-        <CaseCard key={caseItem.id} caseItem={caseItem} />
+        <CaseCard
+          key={caseItem.id}
+          caseItem={caseItem}
+          onCardClick={handleCardClick}
+        />
       ))}
+      {/*Mostrar el modal si hay un cómic seleccionado */}
+      {/* Comentado temporalmente hasta tener el Modal */}
+      {/*selectedCase && (
+        <CaseModal caseItem={selectedCase} onClose={closeModal} />
+      )*/}
     </div>
   );
 }
 
-function CaseCard({ caseItem }) {
-  //const { favorites, toggleFavorite } = useFavorites(); // Usamos el contexto
-  //const isFavorite = favorites.some((fav) => fav.isbn === caseItem.isbn);
+function CaseCard({ caseItem, onCardClick }) {
+  //const { favourites, toggleFavourite } = useFavourites();
+  // Verificación segura de propiedades
+  if (!caseItem || !caseItem.id) {
+    return null; // o algún componente de carga/error
+  }
+
+  //const isFavourite = favourites.some((fav) => fav.id === caseItem.id);
 
   return (
-    <div className={styles.caseCard}>
-      {/* Favourite + heart icon */}
-
-      {/* caseItem image */}
+    <div className={styles.caseCard} onClick={() => onCardClick(caseItem)}>
       <img
-        src={caseItem.image}
+        src={caseItem.urlImage || caseItem.image} // Compatibilty with the two names
         alt={caseItem.address}
         className={styles.caseImage}
       />

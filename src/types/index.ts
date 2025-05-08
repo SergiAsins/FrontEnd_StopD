@@ -1,11 +1,12 @@
 export interface CaseItem {
   id: string;
-  tenants: Set<String>;
+  tenants?: Set<String>;
   address: string;
   status: string;
   date: string;
   region: string;
-  urlImage: string;
+  city: string;
+  urlImage?: string;
   description: string;
-  //attendants
+  attendants?: Set<String>;
 }
