@@ -7,7 +7,10 @@ const API_URL = "/cases";
 export const fetchCases = async (): Promise<CaseItem[]> => {
   const response = await axiosInstance.get<CaseItem[]>(API_URL);
   if (!response.data) throw new Error("Error fetching cases");
-  return response.data;
+  return response.data.map((dto) => ({
+    ...dto,
+    caseDate: dto.caseDate.toString(), // Convertir LocalDate a string
+  }));
 };
 
 // Fetch a single case by ID
@@ -18,7 +21,7 @@ export const getCaseByIdFromAPI = async (id: string): Promise<CaseItem> => {
 
 // Add a new case
 export const addNewCase = async (
-  caseItem: Omit<CaseItem, "ID">
+  caseItem: Omit<CaseItem, "id">
 ): Promise<CaseItem> => {
   const response = await axiosInstance.post<CaseItem>(API_URL, caseItem);
   return response.data;
@@ -26,19 +29,14 @@ export const addNewCase = async (
 
 // Update an existing case
 export const updateApiCase = async (
-  ID: string,
+  id: string, // El backend lo convertirá a Long
   updatedCase: Partial<CaseItem>
 ): Promise<CaseItem> => {
-  const response = await axiosInstance.put<CaseItem>(
-    `${API_URL}/by-id/${ID}`,
-    updatedCase
-  );
+  const response = await axiosInstance.put(`${API_URL}/${id}`, updatedCase);
   return response.data;
 };
 
 // Delete a case
-export const deleteCase = async (ID: string): Promise<void> => {
-  await axiosInstance.delete(`${API_URL}/by-id/${ID}`);
+export const deleteApiCase = async (id: string): Promise<void> => {
+  await axiosInstance.delete(`${API_URL}/by-id/${id}`);
 };
-
-// getCaseById

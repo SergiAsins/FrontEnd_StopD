@@ -5,7 +5,7 @@ import { CaseItem } from "../../types/index";
 //import styles from "./CasesList.module.css";
 
 const CaseDetail: React.FC = () => {
-  const { ID } = useParams<{ ID: string }>();
+  const { id } = useParams<{ id: string }>();
   const [caseItem, setCase] = useState<CaseItem | null>(null);
   //const [isLoading, setIsLoading] = useState(true);
   //const [error, setError] = useState<string | null>(null);
@@ -14,17 +14,17 @@ const CaseDetail: React.FC = () => {
 
   useEffect(() => {
     const fetchCase = async () => {
-      if (ID) {
-        const caseData = await getCaseByIdFromAPI(ID);
+      if (id) {
+        const caseData = await getCaseByIdFromAPI(id);
         setCase(caseData);
       }
     };
 
     fetchCase();
-  }, [ID]);
+  }, [id]);
 
   if (!caseItem) {
-    return <div>This ID that does not exist in our data base</div>;
+    return <div>This id that does not exist in our data base</div>;
   }
 
   return (
@@ -34,7 +34,7 @@ const CaseDetail: React.FC = () => {
       <img src={caseItem.urlImage} alt={caseItem.address} />
       <p>Tenants : {caseItem.tenants}</p>
       <p>Status : {caseItem.status}</p>
-      <p>Date: {caseItem.date}</p>
+      <p>Date: {caseItem.caseDate}</p>
       <p>Regiont : {caseItem.region}</p>
       <p>City : {caseItem.city}</p>
       <p>Description: {caseItem.description}</p>

@@ -27,7 +27,7 @@ export default function CasesList({ cases }) {
           onCardClick={handleCardClick}
         />
       ))}
-      {/*Mostrar el modal si hay un cómic seleccionado */}
+      {/*Mostrar el modal si hay un case seleccionado */}
       {/* Comentado temporalmente hasta tener el Modal */}
       {/*selectedCase && (
         <CaseModal caseItem={selectedCase} onClose={closeModal} />

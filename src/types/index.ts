@@ -1,9 +1,9 @@
 export interface CaseItem {
-  id: string;
+  id: number;
   tenants?: Set<String>;
   address: string;
   status: string;
-  date: string;
+  caseDate: string;
   region: string;
   city: string;
   urlImage?: string;

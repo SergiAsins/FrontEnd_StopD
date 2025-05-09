@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { CaseItem } from "../types/index";
-import { fetchCases } from "../api-services/cases.service";
+import {
+  fetchCases,
+  addNewCase,
+  updateApiCase,
+  deleteApiCase,
+} from "../api-services/cases.service";
 
 export const useCases = () => {
   const [cases, setCases] = useState<CaseItem[]>([]);
@@ -10,7 +15,6 @@ export const useCases = () => {
       const casesData = await fetchCases();
       setCases(casesData);
     };
-
     loadCases();
   }, []);
 
@@ -19,15 +23,15 @@ export const useCases = () => {
     setCases([...cases, newCase]);
   };
 
-  const updateCase = async (ID: string, updatedCase: Partial<CaseItem>) => {
-    const updated = await updateApiCase(ID, updatedCase);
-    setCases(cases.map((caseItem) => caseItem.ID === ID? updated: caseItem)));
+  const updateCase = async (id: string, updatedCase: Partial<CaseItem>) => {
+    const updated = await updateApiCase(id, updatedCase);
+    setCases(cases.map((c) => (c.id === Number(id) ? updated : c))); // Convertir a número
   };
 
-  const deleteCase = async (ID: string) => {
-    await deleteCase(ID);
-    setCases(cases.filter((caseItem.id) => !== ID));
+  const deleteCase = async (id: string) => {
+    await deleteApiCase(id);
+    setCases(cases.filter((c) => c.id !== Number(id))); // Convertir a número
   };
 
-  return { cases, addCase, updateCase, deleteCase }
+  return { cases, addCase, updateCase, deleteCase };
 };
