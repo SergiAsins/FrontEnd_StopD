@@ -48,7 +48,10 @@ function CaseCard({ caseItem, onCardClick }) {
   return (
     <div className={styles.caseCard} onClick={() => onCardClick(caseItem)}>
       <img
-        src={caseItem.urlImage || caseItem.image} // Compatibilty with the two names
+        src={
+          caseItem.urlImage ||
+          "https://cdn.pixabay.com/photo/2020/06/01/06/10/buildings-5245324_1280.jpg"
+        }
         alt={caseItem.address}
         className={styles.caseImage}
       />
@@ -57,14 +60,24 @@ function CaseCard({ caseItem, onCardClick }) {
       <div className={styles.caseContent}>
         <h3 className={styles.caseAddress}>{caseItem.address}</h3>
         <p className={styles.caseStatus}>Status: {caseItem.status}</p>
-        <p className={styles.caseDate}>EvictionDate: {caseItem.date}</p>
-        <p className={styles.caseTenants}>Tenants: {caseItem.tenants}</p>
+        <p className={styles.caseDate}>
+          EvictionDate: {new Date(caseItem.caseDate).toLocaleDateString()}
+        </p>
+        <p className={styles.caseTenants}>
+          Tenants:{" "}
+          {caseItem.tenants?.length > 0
+            ? caseItem.tenants
+            : "No tenants registered yet"}
+        </p>
         <p className={styles.caseCity}>City: {caseItem.city}</p>
         <p className={styles.caseRegion}>Region: {caseItem.region}</p>
         <p className={styles.caseDescription}>{caseItem.description}</p>
         <Button className={clsx(styles.button, styles.attend)} text="ATTEND" />
         <p className={styles.caseAttendants}>
-          Attendants: {caseItem.attendants}
+          Attendants:{" "}
+          {caseItem.attendants?.length > 0
+            ? `${caseItem.attendants.length} people attending`
+            : "Be the first to attend!"}
         </p>
       </div>
     </div>

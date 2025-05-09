@@ -9,7 +9,7 @@ export const fetchCases = async (): Promise<CaseItem[]> => {
   if (!response.data) throw new Error("Error fetching cases");
   return response.data.map((dto) => ({
     ...dto,
-    caseDate: dto.caseDate.toString(), // Convertir LocalDate a string
+    caseDate: new Date(dto.caseDate), // Convertir a Date aquí
   }));
 };
 

@@ -32,13 +32,13 @@ const CaseDetail: React.FC = () => {
       <Link to="/cases">Back to Cases</Link>
       <h1>{caseItem.address}</h1>
       <img src={caseItem.urlImage} alt={caseItem.address} />
-      <p>Tenants : {caseItem.tenants}</p>
+      <p>Tenants : {caseItem.tenants} </p>
       <p>Status : {caseItem.status}</p>
-      <p>Date: {caseItem.caseDate}</p>
+      <p>Date: {new Date(caseItem.caseDate).toLocaleDateString()}</p>
       <p>Regiont : {caseItem.region}</p>
       <p>City : {caseItem.city}</p>
       <p>Description: {caseItem.description}</p>
-      <p>Attendants : {caseItem.attendants}</p>
+      <p>Attendants : {caseItem.attendants} </p>
     </div>
   );
 };

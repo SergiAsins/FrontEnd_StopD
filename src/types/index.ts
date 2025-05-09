@@ -3,7 +3,7 @@ export interface CaseItem {
   tenants?: Set<String>;
   address: string;
   status: string;
-  caseDate: string;
+  caseDate: Date;
   region: string;
   city: string;
   urlImage?: string;
