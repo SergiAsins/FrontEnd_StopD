@@ -1,4 +1,4 @@
-import styles from "./Navitem.module.css";
+import styles from "./NavItem.module.css";
 
 export default function NavItem({ href, text }) {
   return (
