@@ -15,7 +15,8 @@ export const fetchCases = async (): Promise<CaseItem[]> => {
 
 // Fetch a single case by ID
 export const getCaseByIdFromAPI = async (id: string): Promise<CaseItem> => {
-  const response = await axiosInstance.get<CaseItem>("${API_URL/by-id/${id}");
+  //const response = await axiosInstance.get<CaseItem>("${API_URL/by-id/${id}");
+  const response = await axiosInstance.get<CaseItem>(`${API_URL}/by-id/${id}`);
   return response.data;
 };
 

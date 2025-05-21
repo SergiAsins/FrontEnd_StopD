@@ -1,6 +1,8 @@
+/*
+
 import axios from "axios";
 
-const apiUrl = "http://34.205.175.94:8080/api/v1/";
+const apiUrl = "http://localhost:8080/api/v1/"; --> for testing in local h2 db
 
 const axiosInstance = axios.create({
   baseURL: apiUrl,
@@ -12,3 +14,5 @@ const axiosInstance = axios.create({
 });
 
 export default axiosInstance;
+
+*/
