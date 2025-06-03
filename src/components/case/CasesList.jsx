@@ -66,7 +66,7 @@ function CaseCard({ caseItem, onCardClick }) {
         <p className={styles.caseTenants}>
           Tenants:{" "}
           {caseItem.tenants?.length > 0
-            ? caseItem.tenants
+            ? caseItem.tenants.map((tenant) => tenant.name).join(", ")
             : "No tenants registered yet"}
         </p>
         <p className={styles.caseCity}>City: {caseItem.city}</p>

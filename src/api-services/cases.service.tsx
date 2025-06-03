@@ -9,7 +9,13 @@ export const fetchCases = async (): Promise<CaseItem[]> => {
   if (!response.data) throw new Error("Error fetching cases");
   return response.data.map((dto) => ({
     ...dto,
-    caseDate: new Date(dto.caseDate), // Convertir a Date aquí
+    caseDate: new Date(dto.caseDate),
+    tenants:
+      dto.tenants?.map((tenant) => ({
+        id: tenant.id,
+        name: tenant.name,
+        roles: tenant.roles,
+      })) || [],
   }));
 };
 

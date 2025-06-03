@@ -1,6 +1,15 @@
+export interface Tenant {
+  id: number;
+  name: string;
+  roles?: Array<{
+    id: number;
+    name: string;
+  }>;
+}
+
 export interface CaseItem {
   id: number;
-  tenants?: Set<String>;
+  tenants?: Tenant[];
   address: string;
   status: string;
   caseDate: Date;
@@ -8,5 +17,5 @@ export interface CaseItem {
   city: string;
   urlImage?: string;
   description: string;
-  attendants?: Set<String>;
+  attendants?: any[]; // O define una interfaz Attendant si es necesario
 }
