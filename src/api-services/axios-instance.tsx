@@ -1,8 +1,7 @@
 import axios from "axios";
-import { API_BASE_URL } from "../config/config";
+//import { API_BASE_URL } from "../config/config";
 
-//const apiUrl = "http://34.205.175.94:8080/api/v1/";
-const apiUrl = import.meta.env.VITE_API_URL;
+const API_BASE_URL = "https://socialstopd.click/api";
 
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
